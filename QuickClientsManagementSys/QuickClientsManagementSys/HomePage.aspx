@@ -12,7 +12,7 @@
             alert(URL);
             document.getElementById("ContentPage").src = URL;
         }
- 
+  
     </script>
 </head>
 <body>
