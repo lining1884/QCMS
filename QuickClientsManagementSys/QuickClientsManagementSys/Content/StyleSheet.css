@@ -1,0 +1,19 @@
+﻿body {
+    text-align: center;
+}
+.d1 {
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    left: 38%;
+    top: 36%;
+    border-top: 3px solid #d5d2d2;
+    border-left: 3px solid #d5d2d2;
+    border-right: 3px solid #d5d2d2;
+    border-bottom: 3px solid #d5d2d2;
+}
+#nama {
+    width: auto;
+    position: absolute;
+    top: 150px;
+}

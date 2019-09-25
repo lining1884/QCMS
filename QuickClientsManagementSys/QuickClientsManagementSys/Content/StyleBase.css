@@ -1,0 +1,23 @@
+﻿body {
+}
+
+#TitleImg, #MenuLeft, #contentForm {
+    border-top-width: 2px;
+    border-top-color: #919191;
+    border-top-style: double;
+    border-left-width: 2px;
+    border-left-color: #919191;
+    border-left-style: double;
+    border-right-width: 2px;
+    border-right-color: #919191;
+    border-right-style: double;
+    border-bottom-width: 2px;
+    border-bottom-color: #919191;
+    border-bottom-style: double;
+}
+
+ul li {
+    border: 1px solid red;
+    list-style: none;
+    text-align: left;
+}
