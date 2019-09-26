@@ -6,6 +6,11 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>用户管理</title>
+    <script type="text/javascript">
+        function PopUserDiv() {
+            window.parent.show();
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -21,7 +26,7 @@
                 </div>
                 <div style="position:absolute; margin-left:124px;">
                     <div style="position:absolute; margin-left:188px;"><!--添加控件-->
-                        <asp:Button runat="server" Width="60px" Text="添加" />
+                        <asp:Button runat="server" Width="60px" Text="添加" OnClientClick="PopUserDiv();"/>
                     </div>
                     <div style="position:absolute; margin-left:252px;"><!--修改控件-->
                         <asp:Button runat="server" Width="60px" Text="修改" />
