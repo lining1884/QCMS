@@ -53,7 +53,9 @@
                     <div style="position:absolute; top:22%; left:28%;">
                    <div style="position:absolute;  "><!--用户名-->
                        <div style="position:absolute; float:left; width:80px;"><span style="width:80px;">用户名：</span></div>
-                       <div style="position:absolute; margin-left:100px;"><asp:TextBox runat="server" ID="userName" Text="" Width="100px" ></asp:TextBox></div>
+                       <div style="position:absolute; margin-left:100px;"><asp:TextBox runat="server" ID="userName" Text="" Width="100px" ></asp:TextBox>
+                           <asp:RegularExpressionValidator Text="用户名不正确" runat="server" ControlToValidate="userName" EnableClientScript="true" ValidationExpression="\w+" ForeColor="Red"></asp:RegularExpressionValidator>
+                       </div>
                    </div>
                    <div style="position:absolute; margin-top:45px; "><!--密码-->
                        <div style="position:absolute; float:left; width:80px;"><span style="width:80px;">密码：</span></div>
@@ -67,7 +69,7 @@
                             </asp:DropDownList></div>
                    </div>
                    <div style="position:absolute; margin-top:150px; "><!--添加取消按钮-->
-                       <div style="position:absolute; float:left;"><asp:Button runat="server" ID="btnSubmit" Text="添加" Width="60px" ></asp:Button></div>
+                       <div style="position:absolute; float:left;"><asp:Button runat="server" ID="btnSubmit" Text="添加" Width="60px" OnClick="btnSubmit_Click" ></asp:Button></div>
                        <div style="position:absolute; margin-left:100px;"><asp:Button runat="server" ID="btnCancel" Text="取消" Width="60px" ></asp:Button></div>
                    </div>
                    </div>

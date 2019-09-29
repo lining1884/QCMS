@@ -12,12 +12,15 @@ public partial class UserManagement : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //绑定所有用户数据
-        //1. 查询user表中的所有数据
-        //2. 构造符合显示的数据
-        //3. 绑定数据
-        this.gvUserList.DataSource = GrenerateUserListFromDT(this.GetUserInfosFromDB());
-        this.gvUserList.DataBind();
+        if (!IsPostBack)
+        {
+            //绑定所有用户数据
+            //1. 查询user表中的所有数据
+            //2. 构造符合显示的数据
+            //3. 绑定数据
+            this.gvUserList.DataSource = GrenerateUserListFromDT(this.GetUserInfosFromDB());
+            this.gvUserList.DataBind();
+        }
 
     }
 

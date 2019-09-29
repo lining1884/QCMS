@@ -66,4 +66,35 @@ public partial class HomePage : System.Web.UI.Page
 
         return userMenusList;
     }
+
+    /// <summary>
+    /// 添加用户按钮事件
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void btnSubmit_Click(object sender,EventArgs e)
+    {
+        string userName = this.userName.Text;
+        string passWord = this.userPWD.Text;
+        string userLevel = this.ddluserLevel.SelectedValue.ToString();
+        string userId = string.Empty;
+        //先查找最大userId
+        DataTable dt = orcl.ReturnDataSet(@"select Max(t.userid) userid from TABUSER t", "MaxUserID").Tables[0];
+        if(dt!=null)
+        {
+            userId = (Convert.ToUInt64(dt.Rows[0][0].ToString())+1).ToString();
+        }
+
+        //生成新加数据的userId
+        string strSQLText = "insert into tabuser values('"+userId+"','"+userName+"','"+passWord+"',"+userLevel+",1,'普通用户',null,to_date('"+System.DateTime.Now.ToString("yyyy/MM/dd")+"','yyyy/MM/dd'))";
+        int result = orcl.ExecuteSQL(strSQLText);
+        if(result==1)
+        {
+            Response.Write("<scripttype='text / javascript'>alert('添加成功！');</script>");
+        }else
+        {
+            Response.Write("<scripttype='text / javascript'>alert('添加失败！');</script>");
+        }
+
+    }
 }
